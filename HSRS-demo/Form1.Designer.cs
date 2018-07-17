@@ -1,4 +1,4 @@
-﻿namespace smarthome
+﻿namespace HSRS_demo
 {
     partial class SmartHomeForm
     {
@@ -42,41 +42,41 @@
             // 
             // Heater
             // 
-            this.Heater.Location = new System.Drawing.Point(591, 93);
+            this.Heater.Location = new System.Drawing.Point(10, 10);
             this.Heater.Name = "Heater";
-            this.Heater.Size = new System.Drawing.Size(100, 50);
+            this.Heater.Size = new System.Drawing.Size(400, 300);
             this.Heater.TabIndex = 5;
             this.Heater.TabStop = false;
             // 
             // Aircondition
             // 
-            this.Aircondition.Location = new System.Drawing.Point(459, 182);
+            this.Aircondition.Location = new System.Drawing.Point(10, 320);
             this.Aircondition.Name = "Aircondition";
-            this.Aircondition.Size = new System.Drawing.Size(100, 50);
+            this.Aircondition.Size = new System.Drawing.Size(400, 300);
             this.Aircondition.TabIndex = 6;
             this.Aircondition.TabStop = false;
             // 
             // Waveoven
             // 
-            this.Waveoven.Location = new System.Drawing.Point(591, 182);
+            this.Waveoven.Location = new System.Drawing.Point(420, 10);
             this.Waveoven.Name = "Waveoven";
-            this.Waveoven.Size = new System.Drawing.Size(100, 50);
+            this.Waveoven.Size = new System.Drawing.Size(400, 300);
             this.Waveoven.TabIndex = 7;
             this.Waveoven.TabStop = false;
             // 
             // Light
             // 
-            this.Light.Location = new System.Drawing.Point(459, 93);
+            this.Light.Location = new System.Drawing.Point(420, 320);
             this.Light.Name = "Light";
-            this.Light.Size = new System.Drawing.Size(100, 50);
+            this.Light.Size = new System.Drawing.Size(400, 300);
             this.Light.TabIndex = 8;
             this.Light.TabStop = false;
             // 
             // Button
             // 
-            this.Button.Location = new System.Drawing.Point(130, 12);
+            this.Button.Location = new System.Drawing.Point(830, 520);
             this.Button.Name = "Button";
-            this.Button.Size = new System.Drawing.Size(124, 77);
+            this.Button.Size = new System.Drawing.Size(200, 100);
             this.Button.TabIndex = 9;
             this.Button.Text = "start";
             this.Button.UseVisualStyleBackColor = true;
@@ -84,28 +84,28 @@
             // 
             // textbox
             // 
-            this.textbox.Location = new System.Drawing.Point(12, 120);
+            this.textbox.Location = new System.Drawing.Point(830, 10);
             this.textbox.Multiline = true;
             this.textbox.Name = "textbox";
             this.textbox.ReadOnly = true;
             this.textbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textbox.Size = new System.Drawing.Size(415, 255);
+            this.textbox.Size = new System.Drawing.Size(200, 500);
             this.textbox.TabIndex = 10;
             // 
             // SmartHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1040, 630);
             this.Controls.Add(this.textbox);
             this.Controls.Add(this.Button);
             this.Controls.Add(this.Light);
             this.Controls.Add(this.Waveoven);
             this.Controls.Add(this.Aircondition);
             this.Controls.Add(this.Heater);
-            this.Name = "SmartHome";
+            this.Name = "SmartHomeForm";
             this.Text = "SmartHome";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Heater)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Aircondition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Waveoven)).EndInit();
