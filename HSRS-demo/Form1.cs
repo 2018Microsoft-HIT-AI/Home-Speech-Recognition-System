@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Microsoft.CognitiveServices.Speech;
 using Newtonsoft.Json;
 
-namespace smarthome
+namespace HSRS_demo
 {
     public partial class SmartHomeForm : Form
     {
@@ -19,19 +19,17 @@ namespace smarthome
         {
             InitializeComponent();
             Button.Text = "开始";
-            /*
-            Heater.Load("heaterOff.png");
-            Aircondition.Load("airconditionOff.png");
-            Waveoven.Load("waveovenOff.png");
-            Light.Load("lightOff.png");
-            */
+            Heater.Image = Resource.HeaterOff;
+            Aircondition.Image = Resource.AirconditionOff;
+            Waveoven.Image = Resource.WaveovenOff;
+            Light.Image = Resource.LightOff;
         }
 
         // 语音识别器
         SpeechRecognizer recognizer;
         bool isRecording = false;
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form_Load(object sender, EventArgs e)
         {
             try
             {
@@ -189,7 +187,7 @@ namespace smarthome
         {
             MakesureRunInUI(() =>
             {
-                Heater.Load("HeaterOn.png");
+                Heater.Image = Resource.HeaterOn;
             });
         }
 
@@ -197,7 +195,7 @@ namespace smarthome
         {
             MakesureRunInUI(() =>
             {
-                Heater.Load("HeaterOff.png");
+                Heater.Image = Resource.HeaterOff;
             });
         }
 
@@ -205,7 +203,7 @@ namespace smarthome
         {
             MakesureRunInUI(() =>
             {
-                Aircondition.Load("AirconditionOn.png");
+                Aircondition.Image = Resource.AirconditionOn;
             });
         }
 
@@ -213,7 +211,7 @@ namespace smarthome
         {
             MakesureRunInUI(() =>
             {
-                Aircondition.Load("AirconditionOff.png");
+                Aircondition.Image = Resource.AirconditionOff;
             });
         }
 
@@ -221,7 +219,7 @@ namespace smarthome
         {
             MakesureRunInUI(() =>
             {
-                Light.Load("WaveovenOn.png");
+                Waveoven.Image = Resource.WaveovenOn;
             });
         }
 
@@ -229,7 +227,7 @@ namespace smarthome
         {
             MakesureRunInUI(() =>
             {
-                Light.Load("WaveovenOff.png");
+                Waveoven.Image = Resource.WaveovenOff;
             });
         }
 
@@ -237,7 +235,7 @@ namespace smarthome
         {
             MakesureRunInUI(() =>
             {
-                Light.Load("LightOn.png");
+                Light.Image = Resource.LightOn;
             });
         }
 
@@ -245,7 +243,7 @@ namespace smarthome
         {
             MakesureRunInUI(() =>
             {
-                Light.Load("LightOff.png");
+                Light.Image = Resource.LightOff;
             });
         }
 
