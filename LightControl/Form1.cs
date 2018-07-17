@@ -35,8 +35,9 @@ namespace LightControl
                 // 密钥和区域可在 https://azure.microsoft.com/zh-cn/try/cognitive-services/my-apis/?api=speech-services 中找到
                 // 密钥示例: 5ee7ba6869f44321a40751967accf7a9
                 // 区域示例: westus
-                SpeechFactory speechFactory = SpeechFactory.FromSubscription("密钥 1 或 密钥 2", "区域");
+                //SpeechFactory speechFactory = SpeechFactory.FromSubscription("密钥 1 或 密钥 2", "区域");
 
+                SpeechFactory speechFactory = SpeechFactory.FromSubscription("5ee7ba6869f44321a40751967accf7a9", "westus");
                 // 识别中文
                 recognizer = speechFactory.CreateSpeechRecognizer("zh-CN");
 
@@ -120,11 +121,11 @@ namespace LightControl
         {
             // 第二步
             // 调用语言理解服务取得用户意图
-            //string intent = await GetLuisResult(text);
+            string intent = await GetLuisResult(text);
 
             // 第三步
             // 按照意图控制灯
-            /*
+            
             if (!string.IsNullOrEmpty(intent))
             {
                 if (intent.Equals("TurnOn", StringComparison.OrdinalIgnoreCase))
@@ -136,19 +137,20 @@ namespace LightControl
                     CloseLight();
                 }
             }
-            */
+            
         }
 
         // 第二步
         // 调用语言理解服务取得用户意图
-        /*
+        
         private async Task<string> GetLuisResult(string text)
         {
             using (HttpClient httpClient = new HttpClient())
             {
                 // LUIS 终结点地址, 示例: https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/102f6255-0c32-4f36-9c79-fe12fea4d6c4?subscription-key=9004421650254a74876cf3c888b1d11f&verbose=true&timezoneOffset=0&q=
                 // 可在 https://www.luis.ai 中进入app右上角publish中找到
-                string luisEndpoint = "你的LUIS终结点地址";
+                //string luisEndpoint = "你的LUIS终结点地址";
+                string luisEndpoint = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/102f6255-0c32-4f36-9c79-fe12fea4d6c4?subscription-key=9004421650254a74876cf3c888b1d11f&verbose=true&timezoneOffset=0&q=";
                 string luisJson = await httpClient.GetStringAsync(luisEndpoint + text);
 
                 try
@@ -167,7 +169,7 @@ namespace LightControl
                 }
             }
         }
-        */
+        
         
         #region 界面操作
 
