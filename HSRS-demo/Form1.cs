@@ -11,15 +11,20 @@ using System.Windows.Forms;
 using Microsoft.CognitiveServices.Speech;
 using Newtonsoft.Json;
 
-namespace LightControl
+namespace smarthome
 {
-    public partial class Form1 : Form
+    public partial class SmartHomeForm : Form
     {
-        public Form1()
+        public SmartHomeForm()
         {
             InitializeComponent();
-            button1.Text = "开始";
-            pictureBox1.Load("LightOff.png");
+            Button.Text = "开始";
+            /*
+            Heater.Load("heaterOff.png");
+            Aircondition.Load("airconditionOff.png");
+            Waveoven.Load("waveovenOff.png");
+            Light.Load("lightOff.png");
+            */
         }
 
         // 语音识别器
@@ -32,16 +37,9 @@ namespace LightControl
             {
                 // 第一步
                 // 初始化语音服务SDK并启动识别器，进行语音转文本
-                // 密钥和区域可在 https://azure.microsoft.com/zh-cn/try/cognitive-services/my-apis/?api=speech-services 中找到
-                // 密钥示例: 5ee7ba6869f44321a40751967accf7a9
-                // 区域示例: westus
-<<<<<<< HEAD
-                //SpeechFactory speechFactory = SpeechFactory.FromSubscription("密钥 1 或 密钥 2", "区域");
-=======
+                
                 SpeechFactory speechFactory = SpeechFactory.FromSubscription("5ee7ba6869f44321a40751967accf7a9", "westus");
->>>>>>> 75b173d9bcfac455ad07dae76a98d91b89a8af00
 
-                SpeechFactory speechFactory = SpeechFactory.FromSubscription("5ee7ba6869f44321a40751967accf7a9", "westus");
                 // 识别中文
                 recognizer = speechFactory.CreateSpeechRecognizer("zh-CN");
 
@@ -63,37 +61,39 @@ namespace LightControl
                     Log("初始化出错，请确认麦克风工作正常");
                     Log("已降级到文本语言理解模式");
 
-                    TextBox inputBox = new TextBox();
-                    inputBox.Text = "";
-                    inputBox.Size = new Size(300, 26);
-                    inputBox.Location = new Point(10, 10);
-                    inputBox.KeyDown += inputBox_KeyDown;
-                    Controls.Add(inputBox);
+                    TextBox Inputbox = new TextBox
+                    {
+                        Text = "",
+                        Size = new Size(300, 26),
+                        Location = new Point(10, 10)
+                    };
+                    Inputbox.KeyDown += InputBox_KeyDown;
+                    Controls.Add(Inputbox);
 
-                    button1.Visible = false;
+                    Button.Visible = false;
                 }
             }
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async void Button_Click(object sender, EventArgs e)
         {
-            button1.Enabled = false;
+            Button.Enabled = false;
 
             isRecording = !isRecording;
             if (isRecording)
             {
                 // 启动识别器
                 await recognizer.StartContinuousRecognitionAsync();
-                button1.Text = "停止";
+                Button.Text = "Stop";
             }
             else
             {
                 // 停止识别器
                 await recognizer.StopContinuousRecognitionAsync();
-                button1.Text = "开始";
+                Button.Text = "Start";
             }
 
-            button1.Enabled = true;
+            Button.Enabled = true;
         }
 
         // 识别过程中的中间结果
@@ -111,7 +111,8 @@ namespace LightControl
             if (!string.IsNullOrEmpty(e.Result.Text))
             {
                 Log("最终结果: " + e.Result.Text);
-                ProcessSttResult(e.Result.Text);
+                //****************************************************
+                //ProcessTransResult(e.Result.Text);
             }
         }
 
@@ -121,19 +122,15 @@ namespace LightControl
             Log("错误: " + e.FailureReason);
         }
 
-        private async void ProcessSttResult(string text)
+        private async void ProcessTransResult(string text)
         {
             // 第二步
             // 调用语言理解服务取得用户意图
-<<<<<<< HEAD
             string intent = await GetLuisResult(text);
-=======
-           string intent = await GetLuisResult(text);
->>>>>>> 75b173d9bcfac455ad07dae76a98d91b89a8af00
 
             // 第三步
             // 按照意图控制灯
-            
+
             if (!string.IsNullOrEmpty(intent))
             {
                 if (intent.Equals("TurnOn", StringComparison.OrdinalIgnoreCase))
@@ -145,22 +142,18 @@ namespace LightControl
                     CloseLight();
                 }
             }
-            
+
         }
 
         // 第二步
         // 调用语言理解服务取得用户意图
-        
+
         private async Task<string> GetLuisResult(string text)
         {
             using (HttpClient httpClient = new HttpClient())
             {
                 // LUIS 终结点地址, 示例: https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/102f6255-0c32-4f36-9c79-fe12fea4d6c4?subscription-key=9004421650254a74876cf3c888b1d11f&verbose=true&timezoneOffset=0&q=
                 // 可在 https://www.luis.ai 中进入app右上角publish中找到
-<<<<<<< HEAD
-                //string luisEndpoint = "你的LUIS终结点地址";
-=======
->>>>>>> 75b173d9bcfac455ad07dae76a98d91b89a8af00
                 string luisEndpoint = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/102f6255-0c32-4f36-9c79-fe12fea4d6c4?subscription-key=9004421650254a74876cf3c888b1d11f&verbose=true&timezoneOffset=0&q=";
                 string luisJson = await httpClient.GetStringAsync(luisEndpoint + text);
 
@@ -180,15 +173,63 @@ namespace LightControl
                 }
             }
         }
-        
-        
+
+
         #region 界面操作
 
         private void Log(string message)
         {
             MakesureRunInUI(() =>
             {
-                textBox1.AppendText(message + "\r\n");
+                textbox.AppendText(message + "\r\n");
+            });
+        }
+
+        private void OpenHeater()
+        {
+            MakesureRunInUI(() =>
+            {
+                Heater.Load("HeaterOn.png");
+            });
+        }
+
+        private void CloseHeater()
+        {
+            MakesureRunInUI(() =>
+            {
+                Heater.Load("HeaterOff.png");
+            });
+        }
+
+        private void OpenAircondition()
+        {
+            MakesureRunInUI(() =>
+            {
+                Aircondition.Load("AirconditionOn.png");
+            });
+        }
+
+        private void CloseAircondition()
+        {
+            MakesureRunInUI(() =>
+            {
+                Aircondition.Load("AirconditionOff.png");
+            });
+        }
+
+        private void OpenWaveoven()
+        {
+            MakesureRunInUI(() =>
+            {
+                Light.Load("WaveovenOn.png");
+            });
+        }
+
+        private void CloseWaveoven()
+        {
+            MakesureRunInUI(() =>
+            {
+                Light.Load("WaveovenOff.png");
             });
         }
 
@@ -196,7 +237,7 @@ namespace LightControl
         {
             MakesureRunInUI(() =>
             {
-                pictureBox1.Load("LightOn.png");
+                Light.Load("LightOn.png");
             });
         }
 
@@ -204,7 +245,7 @@ namespace LightControl
         {
             MakesureRunInUI(() =>
             {
-                pictureBox1.Load("LightOff.png");
+                Light.Load("LightOff.png");
             });
         }
 
@@ -223,14 +264,14 @@ namespace LightControl
 
         #endregion
 
-        private void inputBox_KeyDown(object sender, KeyEventArgs e)
+        private void InputBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && sender is TextBox)
             {
                 TextBox textBox = sender as TextBox;
                 e.Handled = true;
                 Log(textBox.Text);
-                ProcessSttResult(textBox.Text);
+                ProcessTransResult(textBox.Text);
                 textBox.Text = string.Empty;
             }
         }
