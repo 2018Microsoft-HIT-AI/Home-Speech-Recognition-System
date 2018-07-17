@@ -154,7 +154,8 @@ namespace smarthome
             {
                 // LUIS 终结点地址, 示例: https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/102f6255-0c32-4f36-9c79-fe12fea4d6c4?subscription-key=9004421650254a74876cf3c888b1d11f&verbose=true&timezoneOffset=0&q=
                 // 可在 https://www.luis.ai 中进入app右上角publish中找到
-                string luisEndpoint = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/102f6255-0c32-4f36-9c79-fe12fea4d6c4?subscription-key=9004421650254a74876cf3c888b1d11f&verbose=true&timezoneOffset=0&q=";
+                // 采用自定义的语言理解模型
+                string luisEndpoint = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/486fbd29-dd13-4ddb-bd2c-59195138c4b8?subscription-key=8439431b515c408296f44ad9b0688fb3&verbose=true&timezoneOffset=0&q=";
                 string luisJson = await httpClient.GetStringAsync(luisEndpoint + text);
 
                 try
