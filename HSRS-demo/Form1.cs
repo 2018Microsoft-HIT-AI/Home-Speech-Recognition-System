@@ -109,8 +109,7 @@ namespace HSRS_demo
             if (!string.IsNullOrEmpty(e.Result.Text))
             {
                 Log("最终结果: " + e.Result.Text);
-                //****************************************************
-                //ProcessTransResult(e.Result.Text);
+                ProcessTransResult(e.Result.Text);
             }
         }
 
@@ -128,17 +127,36 @@ namespace HSRS_demo
 
             // 第三步
             // 按照意图控制灯
-
-            if (!string.IsNullOrEmpty(intent))
+            Log(intent+"\n\n\n");
+            switch (intent)
             {
-                if (intent.Equals("TurnOn", StringComparison.OrdinalIgnoreCase))
-                {
-                    OpenLight();
-                }
-                else if (intent.Equals("TurnOff", StringComparison.OrdinalIgnoreCase))
-                {
-                    CloseLight();
-                }
+                case "HeaterOn":
+                    Heater.Image = Resource.HeaterOn;
+                    break;
+                case "HeaterOff":
+                    Heater.Image = Resource.HeaterOff;
+                    break;
+                case "AirconditionOn":
+                    Aircondition.Image = Resource.AirconditionOn;
+                    break;
+                case "AirconditionOff":
+                    Aircondition.Image = Resource.AirconditionOff;
+                    break;
+                case "WaveovenOn":
+                    Waveoven.Image = Resource.WaveovenOn;
+                    break;
+                case "WaveovenOff":
+                    Waveoven.Image = Resource.WaveovenOff;
+                    break;
+                case "LightOn":
+                    Light.Image = Resource.LightOn;
+                    break;
+                case "LightOff":
+                    Light.Image = Resource.LightOff;
+                    break;
+                case "None":
+                    Log("None\n");
+                    break;
             }
 
         }
