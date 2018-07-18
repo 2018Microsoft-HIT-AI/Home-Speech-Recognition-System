@@ -141,7 +141,7 @@ namespace HSRS_demo
                     Heater.Image = Resource.HeaterOn;
                     //await recognizer.StopContinuousRecognitionAsync();   
                     //recognizer.StopContinuousRecognitionAsync();
-                    textToSpeak = "热水壶已打开";
+                    textToSpeak = "The kettle has been turned on.";
                     synthes1.Speak(textToSpeak);//同步
                     //await synthes1.SpeakAsync(textToSpeak);//异步
                     //await recognizer.StartContinuousRecognitionAsync();
@@ -153,7 +153,7 @@ namespace HSRS_demo
                     Heater.Image = Resource.HeaterOff;
                     await recognizer.StopContinuousRecognitionAsync();
                     //Button.Text = "Start";
-                    textToSpeak = "热水壶已关闭";
+                    textToSpeak = "The kettle has been turned off";
                     //SpeechSynthesizer synthes2 = new SpeechSynthesizer();
                     synthes1.Speak(textToSpeak);//同步
                     await recognizer.StartContinuousRecognitionAsync();
@@ -162,37 +162,37 @@ namespace HSRS_demo
                     break;
                 case "AirconditionOn":
                     Aircondition.Image = Resource.AirconditionOn;
-                    textToSpeak = "空调已打开";
+                    textToSpeak = "The airconditoner has been turned on.";
                     //SpeechSynthesizer synthes3 = new SpeechSynthesizer();
                     synthes1.Speak(textToSpeak);//同步
                     break;
                 case "AirconditionOff":
                     Aircondition.Image = Resource.AirconditionOff;
-                    textToSpeak = "空调已关闭";
+                    textToSpeak = "The airconditioner has been turned off";
                     //SpeechSynthesizer synthes4 = new SpeechSynthesizer();
                     synthes1.Speak(textToSpeak);//同步
                     break;
                 case "WaveovenOn":
                     Waveoven.Image = Resource.WaveovenOn;
-                    textToSpeak = "微波炉已打开";
+                    textToSpeak = "The microwave oven has been turned on.";
                     //SpeechSynthesizer synthes5 = new SpeechSynthesizer();
                     synthes1.Speak(textToSpeak);//同步
                     break;
                 case "WaveovenOff":
                     Waveoven.Image = Resource.WaveovenOff;
-                    textToSpeak = "微波炉已关闭";
+                    textToSpeak = "The microwave oven has been turned off";
                     //SpeechSynthesizer synthes6 = new SpeechSynthesizer();
                     synthes1.Speak(textToSpeak);//同步
                     break;
                 case "LightOn":
                     Light.Image = Resource.LightOn;
-                    textToSpeak = "卧室灯已打开";
+                    textToSpeak = "The light has been turned on.";
                     //SpeechSynthesizer synthes7 = new SpeechSynthesizer();
                     synthes1.Speak(textToSpeak);//同步
                     break;
                 case "LightOff":
                     Light.Image = Resource.LightOff;
-                    textToSpeak = "卧室灯已关闭";
+                    textToSpeak = "The light has been turned off.";
                     //SpeechSynthesizer synthes8 = new SpeechSynthesizer();
                     synthes1.Speak(textToSpeak);//同步
                     break;
@@ -201,7 +201,7 @@ namespace HSRS_demo
                     Waveoven.Image = Resource.WaveovenOn;
                     Aircondition.Image = Resource.AirconditionOn;
                     Heater.Image = Resource.HeaterOn;
-                    textToSpeak = "所有设备已打开";
+                    textToSpeak = "All devices have been turned on.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "AllOff":
@@ -209,79 +209,79 @@ namespace HSRS_demo
                     Waveoven.Image = Resource.WaveovenOff;
                     Aircondition.Image = Resource.AirconditionOff;
                     Heater.Image = Resource.HeaterOff;
-                    textToSpeak = "所有设备已关闭";
+                    textToSpeak = "All devices have been turned off.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "AirconditionAndHeaterOn":
                     Aircondition.Image = Resource.AirconditionOn;
                     Heater.Image = Resource.HeaterOn;
-                    textToSpeak = "空调和热水壶已打开";
+                    textToSpeak = "Airconditioner and kettle have been turned on.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "AirconditionAndHeaterOff":
                     Aircondition.Image = Resource.AirconditionOff;
                     Heater.Image = Resource.HeaterOff;
-                    textToSpeak = "空调和热水壶已关闭";
+                    textToSpeak = "Airconditioner and kettle have been turned off.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "AirconditionAndWaveovenOn":
                     Aircondition.Image = Resource.AirconditionOn;
                     Waveoven.Image = Resource.WaveovenOn;
-                    textToSpeak = "空调和微波炉已打开";
+                    textToSpeak = "Airconditioner and microwave oven have been turned on.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "AirconditionAndWaveovenOff":
                     Aircondition.Image = Resource.AirconditionOff;
                     Waveoven.Image = Resource.WaveovenOff;
-                    textToSpeak = "空调和微波炉已关闭";
+                    textToSpeak = "Airconditioner and microwave oven have been turned off.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "HeaterAndWaveovenOn":
                     Heater.Image = Resource.HeaterOn;
                     Waveoven.Image = Resource.WaveovenOn;
-                    textToSpeak = "热水壶和微波炉已打开";
+                    textToSpeak = "Kettle and microwave oven have been turned on.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "HeaterAndWaveovenOff":
                     Heater.Image = Resource.HeaterOff;
                     Waveoven.Image = Resource.WaveovenOff;
-                    textToSpeak = "热水壶和微波炉已关闭";
+                    textToSpeak = "Kettle and microwave oven have been turned off.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "LightAndAirconditionOn":
                     Light.Image = Resource.LightOn;
                     Aircondition.Image = Resource.AirconditionOn;
-                    textToSpeak = "卧室灯和空调已打开";
+                    textToSpeak = "Light and airconditioner have been turned on.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "LightAndAirconditionOff":
                     Light.Image = Resource.LightOff;
                     Aircondition.Image = Resource.AirconditionOff;
-                    textToSpeak = "卧室灯和空调已关闭";
+                    textToSpeak = "Light and airconditioner have been turned off.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "LightAndHeaterOn":
                     Light.Image = Resource.LightOn;
                     Heater.Image = Resource.HeaterOn;
-                    textToSpeak = "卧室灯和热水壶已打开";
+                    textToSpeak = "Light and kettle have been turned on.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "LightAndHeaterOff":
                     Light.Image = Resource.LightOff;
                     Heater.Image = Resource.HeaterOff;
-                    textToSpeak = "卧室灯和热水壶已关闭";
+                    textToSpeak = "Light and kettle have been turned off.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "LightAndWaveovenOn":
                     Light.Image = Resource.LightOn;
                     Waveoven.Image = Resource.WaveovenOn;
-                    textToSpeak = "卧室灯和微波炉已打开";
+                    textToSpeak = "Light and microwave oven have been turned on.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "LightAndWaveovenOff":
                     Light.Image = Resource.LightOff;
                     Waveoven.Image = Resource.WaveovenOff;
-                    textToSpeak = "卧室灯和微波炉已关闭";
+                    textToSpeak = "Light and microwave oven have been turned off.";
                     synthes1.Speak(textToSpeak);
                     break;
                 case "None":
