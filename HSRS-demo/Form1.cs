@@ -5,11 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+//using System.Runtime.WindowsRuntime;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.CognitiveServices.Speech;
 using Newtonsoft.Json;
+
+using System.Speech.Synthesis;
 
 namespace HSRS_demo
 {
@@ -128,34 +132,73 @@ namespace HSRS_demo
             // 第三步
             // 按照意图控制灯
             Log(intent+"\n\n\n");
+            string textToSpeak = "";
+            SpeechSynthesizer synthes1 = new SpeechSynthesizer();
             switch (intent)
             {
+                
                 case "HeaterOn":
                     Heater.Image = Resource.HeaterOn;
+                    //await recognizer.StopContinuousRecognitionAsync();   
+                    //recognizer.StopContinuousRecognitionAsync();
+                    textToSpeak = "热水壶已经打开";
+                    synthes1.Speak(textToSpeak);//同步
+                    //await synthes1.SpeakAsync(textToSpeak);//异步
+                    //await recognizer.StartContinuousRecognitionAsync();
+                    //recognizer.StartContinuousRecognitionAsync();
+
+                    //
                     break;
                 case "HeaterOff":
                     Heater.Image = Resource.HeaterOff;
+                    await recognizer.StopContinuousRecognitionAsync();
+                    //Button.Text = "Start";
+                    textToSpeak = "热水壶已经关闭";
+                    //SpeechSynthesizer synthes2 = new SpeechSynthesizer();
+                    synthes1.Speak(textToSpeak);//同步
+                    await recognizer.StartContinuousRecognitionAsync();
+                    //Button.Text = "Stop";
+                    //synthes.SpeakAsync(textToSpeak);//异步
                     break;
                 case "AirconditionOn":
                     Aircondition.Image = Resource.AirconditionOn;
+                    textToSpeak = "空调已经打开";
+                    //SpeechSynthesizer synthes3 = new SpeechSynthesizer();
+                    synthes1.Speak(textToSpeak);//同步
                     break;
                 case "AirconditionOff":
                     Aircondition.Image = Resource.AirconditionOff;
+                    textToSpeak = "空调已经关闭";
+                    //SpeechSynthesizer synthes4 = new SpeechSynthesizer();
+                    synthes1.Speak(textToSpeak);//同步
                     break;
                 case "WaveovenOn":
                     Waveoven.Image = Resource.WaveovenOn;
+                    textToSpeak = "微波炉已经打开";
+                    //SpeechSynthesizer synthes5 = new SpeechSynthesizer();
+                    synthes1.Speak(textToSpeak);//同步
                     break;
                 case "WaveovenOff":
                     Waveoven.Image = Resource.WaveovenOff;
+                    textToSpeak = "微波炉已经关闭";
+                    //SpeechSynthesizer synthes6 = new SpeechSynthesizer();
+                    synthes1.Speak(textToSpeak);//同步
                     break;
                 case "LightOn":
                     Light.Image = Resource.LightOn;
+                    textToSpeak = "卧室灯已经打开";
+                    //SpeechSynthesizer synthes7 = new SpeechSynthesizer();
+                    synthes1.Speak(textToSpeak);//同步
                     break;
                 case "LightOff":
                     Light.Image = Resource.LightOff;
+                    textToSpeak = "卧室灯已经关闭";
+                    //SpeechSynthesizer synthes8 = new SpeechSynthesizer();
+                    synthes1.Speak(textToSpeak);//同步
                     break;
                 case "None":
                     Log("None\n");
+                   
                     break;
             }
 
