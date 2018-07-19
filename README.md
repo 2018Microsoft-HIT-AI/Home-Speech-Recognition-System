@@ -6,14 +6,20 @@
 
 本项目是 <HIT2018夏_计算思维与科学前沿> 结课作业.
 
+####
+
+github内容中lightcontrol.sln是样例的解决方案
+
+我组成果在于HSRS-demo文件夹内，clone后在vs中加载HSRS-demo.sln即可运行
+
 #### 贡献者
 
-mtwhitecamel		-	待定
+mtwhitecamel		-	30%
 
-tian1152010110	-	待定
+tian1152010110	-	
 
 00yk			-	待定
 
 yanyu0618		-	待定
 
-bluestyle			-	待定	
+bluestyle  -15%	
