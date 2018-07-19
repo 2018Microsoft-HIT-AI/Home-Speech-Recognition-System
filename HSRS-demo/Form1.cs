@@ -151,12 +151,12 @@ namespace HSRS_demo
                     break;
                 case "HeaterOff":
                     Heater.Image = Resource.HeaterOff;
-                    await recognizer.StopContinuousRecognitionAsync();
+                    //await recognizer.StopContinuousRecognitionAsync();
                     //Button.Text = "Start";
                     textToSpeak = "The kettle has been turned off";
                     //SpeechSynthesizer synthes2 = new SpeechSynthesizer();
                     synthes1.Speak(textToSpeak);//同步
-                    await recognizer.StartContinuousRecognitionAsync();
+                    //await recognizer.StartContinuousRecognitionAsync();
                     //Button.Text = "Stop";
                     //synthes.SpeakAsync(textToSpeak);//异步
                     break;
