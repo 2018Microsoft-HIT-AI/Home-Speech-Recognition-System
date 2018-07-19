@@ -14,12 +14,12 @@ github内容中lightcontrol.sln是样例的解决方案
 
 #### 贡献者
 
-mtwhitecamel		-	30%
+mtwhitecamel		
 
-tian1152010110	-15%
+tian1152010110	
 
-00yk			-	20%
+00yk		
 
-yanyu0618		-	20%
+yanyu0618		
 
-bluestyle  -15%	
+bluestyle  
