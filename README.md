@@ -6,7 +6,7 @@
 
 本项目是 <HIT2018夏_计算思维与科学前沿> 结课作业.
 
-####
+#### 运行测试
 
 github内容中lightcontrol.sln是样例的解决方案
 
@@ -16,10 +16,10 @@ github内容中lightcontrol.sln是样例的解决方案
 
 mtwhitecamel		-	30%
 
-tian1152010110	-	
+tian1152010110	-15%
 
-00yk			-	待定
+00yk			-	20%
 
-yanyu0618		-	待定
+yanyu0618		-	20%
 
 bluestyle  -15%	
